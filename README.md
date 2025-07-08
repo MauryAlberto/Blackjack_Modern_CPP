@@ -1,2 +1,1 @@
-# Blackjack_Modern_CPP
-Blackjack in Modern C++
+**Console-based Blackjack Game (Modern C++)**
