@@ -5,12 +5,12 @@
 #include <utility>
 
 enum class Suit {Hearts, Diamonds, Clubs, Spades };
-enum class Rank {Two = 2, Three, Four, Five, Six, Seve, Eight, Nine, Ten,
-                 Jack = 10, Queen = 10, King = 10, Ace = 11};
+enum class Rank {Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten,
+                 Jack, Queen, King, Ace};
 
 class Card{
     public:
-        constexpr Card(Suit suit, Rank rank) noexcept : suit_{suit}, rank_{rank} {}
+        constexpr Card(Rank rank, Suit suit) noexcept : rank_{rank}, suit_{suit} {}
 
         [[nodiscard]] std::string toString() const;
         [[nodiscard]] Rank getRank() const noexcept {return rank_;}
