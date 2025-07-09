@@ -10,7 +10,7 @@ class Player{
 public:
     explicit Player(std::string name, bool isDealer = false) : name_{std::move(name)}, isDealer_{isDealer} {}
 
-    void addCard(std::shared_ptr<Card> card);
+    void addCard(Card card);
     void clearHand();
 
     [[nodiscard]] int getHandValue() const;
@@ -21,6 +21,6 @@ public:
 
 private:
     std::string name_;
-    std::vector<std::shared_ptr<Card>> hand_;
+    std::vector<Card> hand_;
     bool isDealer_;
 };
