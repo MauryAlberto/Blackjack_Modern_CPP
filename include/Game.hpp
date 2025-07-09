@@ -4,17 +4,17 @@
 #include "Deck.hpp"
 
 class Game{
-    public:
-        Game();
+public:
+    Game();
 
-        void play();
-    private:
-        Deck deck_;
-        Player player_{"You"};
-        Player dealer_{"Dealer", true};
+    void play();
+private:
+    Deck deck_;
+    Player player_{"You"};
+    Player dealer_{"Dealer", true};
 
-        void initialDeal();
-        void playerTurn();
-        void dealterTurn();
-        void determineWinner();
+    void initialDeal();
+    void playerTurn();
+    void dealterTurn();
+    void determineWinner();
 };
