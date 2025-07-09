@@ -28,7 +28,12 @@ int Player::getHandValue() const{
     return value;
 }
 
-void Player::showHand(bool hideFirstCard) const{
+void Player::showHand(bool hideFirstCard, bool singleDraw) const{
+    if(singleDraw){
+        std::cout << "[" << hand_.back().toString() << "]\n";
+        return;
+    }
+
     std::cout << name_ << ":";
 
     for(size_t i = 0; i < hand_.size(); ++i){
@@ -39,7 +44,11 @@ void Player::showHand(bool hideFirstCard) const{
         }
     }
 
-    if(!(hideFirstCard && isDealer_)){
+    std::cout << "\n";
+
+    if(!hideFirstCard && !isDealer_){
         std::cout << "Your hand value: " << getHandValue() << "\n\n";
+    }else if(!hideFirstCard && isDealer_){
+        std::cout << "Dealer hand value: " << getHandValue() << "\n\n";
     }
 }

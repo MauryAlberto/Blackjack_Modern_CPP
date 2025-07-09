@@ -10,11 +10,11 @@ public:
     void play();
 private:
     Deck deck_;
-    Player player_{"You"};
+    Player player_{"Player"};
     Player dealer_{"Dealer", true};
 
     void initialDeal();
     void playerTurn();
-    void dealterTurn();
+    void dealerTurn();
     void determineWinner();
 };

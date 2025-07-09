@@ -16,7 +16,7 @@ public:
     [[nodiscard]] int getHandValue() const;
     [[nodiscard]] bool isBusted() const {return getHandValue() > 21;}
     
-    void showHand(bool hideFirstCard = false) const;
+    void showHand(bool hideFirstCard = false, bool singleDraw = false) const;
     [[nodiscard]] const std::string& getName() const noexcept {return name_;}
 
 private:
