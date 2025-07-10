@@ -59,7 +59,7 @@ void Game::playerTurn(){
         std::cout << "\n";
 
         if(choice == 's' || choice == 'S'){
-            std::cout << player_.getName() << " stands with a hand value of " << player_.getHandValue() << ".\n";
+            std::cout << player_.getName() << " stands with a hand value of " << player_.getHandValue() << ".\n\n";
             return;
         }else if(choice == 'h' || choice == 'H'){
             std::optional<Card> card = deck_.dealCard();
@@ -85,6 +85,7 @@ void Game::playerTurn(){
 
 void Game::dealerTurn(){
     std::cout << "Dealer's turn: \n";
+    std::this_thread::sleep_for(std::chrono::seconds(3));
     dealer_.showHand(false, false);
     std::this_thread::sleep_for(std::chrono::seconds(3));
 
@@ -107,7 +108,7 @@ void Game::dealerTurn(){
         std::cout << "Dealer busts!\n";
         std::this_thread::sleep_for(std::chrono::seconds(3));
     }else{
-        std::cout << "Dealer stands with " << dealer_.getHandValue() << ".\n";
+        std::cout << "Dealer stands with a hand value of " << dealer_.getHandValue() << ".\n";
         std::this_thread::sleep_for(std::chrono::seconds(3));
     }
 }
@@ -117,11 +118,13 @@ void Game::determineWinner(){
     int dealerValue = dealer_.getHandValue();
 
     std::cout << "\nFinal Results: \n\n";
+    std::this_thread::sleep_for(std::chrono::seconds(3));
     std::cout << "Player hand (" << playerValue << "): ";
     player_.showHand(false, false);
+    std::this_thread::sleep_for(std::chrono::seconds(3));
     std::cout << "Dealer hand (" << dealerValue << "): ";
     dealer_.showHand(false, false);
-    std::this_thread::sleep_for(std::chrono::seconds(2));
+    std::this_thread::sleep_for(std::chrono::seconds(3));
 
     if (playerValue > 21) {
         std::cout << "You busted! Dealer wins.\n";
