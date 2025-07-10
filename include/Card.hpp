@@ -18,8 +18,6 @@ public:
     [[nodiscard]] int getValue() const noexcept;
     [[nodiscard]] bool isAce() const noexcept {return rank_ == Rank::Ace;}
 
-    auto operator<=>(const Card&) const = default;
-
 private:
     Suit suit_;
     Rank rank_;
